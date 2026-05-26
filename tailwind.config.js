@@ -1,0 +1,98 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "primary-fixed": "#dae2fd",
+        "surface-dim": "#cbdbf5",
+        "primary-container": "#131b2e",
+        "on-surface-variant": "#45464d",
+        "secondary": "#9d4300",
+        "surface-variant": "#d3e4fe",
+        "on-secondary-container": "#5c2400",
+        "inverse-surface": "#213145",
+        "surface-bright": "#f8f9ff",
+        "error-container": "#ffdad6",
+        "surface-container-high": "#dce9ff",
+        "secondary-fixed": "#ffdbca",
+        "on-primary-fixed": "#131b2e",
+        "surface-container-highest": "#d3e4fe",
+        "secondary-fixed-dim": "#ffb690",
+        "background": "#f8f9ff",
+        "tertiary-container": "#1a1c1c",
+        "on-secondary": "#ffffff",
+        "primary-fixed-dim": "#bec6e0",
+        "on-tertiary-container": "#838483",
+        "on-surface": "#0b1c30",
+        "error": "#ba1a1a",
+        "on-error-container": "#93000a",
+        "outline-variant": "#c6c6cd",
+        "tertiary-fixed": "#e2e2e2",
+        "on-primary-container": "#7c839b",
+        "surface-container-lowest": "#ffffff",
+        "on-background": "#0b1c30",
+        "tertiary-fixed-dim": "#c6c7c6",
+        "on-tertiary-fixed-variant": "#454747",
+        "surface-tint": "#565e74",
+        "inverse-primary": "#bec6e0",
+        "outline": "#76777d",
+        "tertiary": "#000000",
+        "surface-container-low": "#eff4ff",
+        "on-primary": "#ffffff",
+        "surface-container": "#e5eeff",
+        "on-secondary-fixed-variant": "#783200",
+        "primary": "#000000",
+        "on-secondary-fixed": "#341100",
+        "on-tertiary-fixed": "#1a1c1c",
+        "on-primary-fixed-variant": "#3f465c",
+        "surface": "#f8f9ff",
+        "on-error": "#ffffff",
+        "inverse-on-surface": "#eaf1ff",
+        "on-tertiary": "#ffffff",
+        "secondary-container": "#fd761a"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "margin-mobile": "20px",
+        "margin-desktop": "64px",
+        "container-max": "1280px",
+        "gutter": "24px",
+        "base": "8px"
+      },
+      "fontFamily": {
+        "sans": ["Pretendard", "sans-serif"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "body-lg": ["Be Vietnam Pro"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "label-sm": ["Be Vietnam Pro"],
+        "body-sm": ["Be Vietnam Pro"],
+        "body-md": ["Be Vietnam Pro"],
+        "label-md": ["Be Vietnam Pro"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+      }
+    }
+  },
+  plugins: [],
+}
