@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 import { UserPlus } from 'lucide-react';
 
 const Register = () => {
@@ -9,14 +10,15 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const { register } = useAuth();
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email && password === confirmPassword) {
       register(email);
-      navigate('/dashboard'); // 회원가입 후 대시보드로 이동하여 컴플라이언스 정보 입력 유도
+      navigate('/dashboard');
     } else {
-      alert("비밀번호가 일치하지 않습니다.");
+      alert(t("비밀번호가 일치하지 않습니다."));
     }
   };
 
@@ -27,15 +29,15 @@ const Register = () => {
           <div className="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-4">
             <UserPlus size={32} />
           </div>
-          <h2 className="text-display-sm font-display-sm font-bold text-on-surface">파트너 가입</h2>
+          <h2 className="text-display-sm font-display-sm font-bold text-on-surface">{t('파트너 가입')}</h2>
           <p className="text-body-md text-on-surface-variant mt-2 text-center">
-            홈스테이를 등록하고 전 세계 고객들과 만나보세요.
+            {t('홈스테이를 등록하고 전 세계 고객들과 만나보세요.')}
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-label-md font-label-md text-on-surface mb-2">이메일</label>
+            <label className="block text-label-md font-label-md text-on-surface mb-2">{t('이메일')}</label>
             <input 
               type="email" 
               value={email}
@@ -46,7 +48,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label className="block text-label-md font-label-md text-on-surface mb-2">비밀번호</label>
+            <label className="block text-label-md font-label-md text-on-surface mb-2">{t('비밀번호')}</label>
             <input 
               type="password" 
               value={password}
@@ -57,7 +59,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label className="block text-label-md font-label-md text-on-surface mb-2">비밀번호 확인</label>
+            <label className="block text-label-md font-label-md text-on-surface mb-2">{t('비밀번호 확인')}</label>
             <input 
               type="password" 
               value={confirmPassword}
@@ -71,13 +73,13 @@ const Register = () => {
             type="submit" 
             className="mt-4 w-full bg-secondary text-on-secondary py-4 rounded-full font-label-lg hover:opacity-90 transition-opacity"
           >
-            가입하기
+            {t('가입하기')}
           </button>
         </form>
 
         <div className="mt-8 text-center">
           <p className="text-body-md text-on-surface-variant">
-            이미 계정이 있으신가요? <Link to="/login" className="text-secondary font-bold hover:underline">로그인</Link>
+            {t('이미 계정이 있으신가요?')} <Link to="/login" className="text-secondary font-bold hover:underline">{t('로그인')}</Link>
           </p>
         </div>
       </div>

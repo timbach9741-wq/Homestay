@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 import { LogIn } from 'lucide-react';
 
 const Login = () => {
@@ -8,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,13 +26,13 @@ const Login = () => {
           <div className="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
             <LogIn size={32} />
           </div>
-          <h2 className="text-display-sm font-display-sm font-bold text-on-surface">환영합니다</h2>
-          <p className="text-body-md text-on-surface-variant mt-2">홈스테이 파트너 계정으로 로그인하세요.</p>
+          <h2 className="text-display-sm font-display-sm font-bold text-on-surface">{t('환영합니다')}</h2>
+          <p className="text-body-md text-on-surface-variant mt-2">{t('홈스테이 파트너 계정으로 로그인하세요.')}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-label-md font-label-md text-on-surface mb-2">이메일</label>
+            <label className="block text-label-md font-label-md text-on-surface mb-2">{t('이메일')}</label>
             <input 
               type="email" 
               value={email}
@@ -41,7 +43,7 @@ const Login = () => {
             />
           </div>
           <div>
-            <label className="block text-label-md font-label-md text-on-surface mb-2">비밀번호</label>
+            <label className="block text-label-md font-label-md text-on-surface mb-2">{t('비밀번호')}</label>
             <input 
               type="password" 
               value={password}
@@ -55,13 +57,13 @@ const Login = () => {
             type="submit" 
             className="mt-4 w-full bg-primary text-on-primary py-4 rounded-full font-label-lg hover:opacity-90 transition-opacity"
           >
-            로그인
+            {t('로그인')}
           </button>
         </form>
 
         <div className="mt-8 text-center">
           <p className="text-body-md text-on-surface-variant">
-            아직 파트너 계정이 없으신가요? <Link to="/register" className="text-primary font-bold hover:underline">회원가입</Link>
+            {t('아직 파트너 계정이 없으신가요?')} <Link to="/register" className="text-primary font-bold hover:underline">{t('회원가입')}</Link>
           </p>
         </div>
       </div>

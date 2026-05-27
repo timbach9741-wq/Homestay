@@ -9,26 +9,29 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Pricing from './pages/Pricing';
 import CountryList from './pages/CountryList';
+import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
   return (
     <Router>
-      <div className="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden flex flex-col">
-        <Navbar />
-        <div className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/country/:countryId" element={<CountryList />} />
-            <Route path="/landing" element={<Landing />} />
-            <Route path="/detail" element={<Detail />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/pricing" element={<Pricing />} />
-          </Routes>
+      <LanguageProvider>
+        <div className="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden flex flex-col">
+          <Navbar />
+          <div className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/country/:countryId" element={<CountryList />} />
+              <Route path="/landing" element={<Landing />} />
+              <Route path="/detail" element={<Detail />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/pricing" element={<Pricing />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </LanguageProvider>
     </Router>
   );
 }

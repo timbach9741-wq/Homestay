@@ -1,34 +1,37 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-surface-container-low border-t border-outline-variant mt-auto">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-16 max-w-container-max mx-auto">
         <div className="col-span-1 md:col-span-1">
           <div className="text-headline-md font-headline-md font-bold text-on-surface mb-4">EduGuard</div>
-          <p className="text-body-sm font-body-sm text-on-surface-variant">글로벌 교육 보호 및 홈스테이 관리 전문 플랫폼. 학생의 안전과 성장을 최우선으로 합니다.</p>
+          <p className="text-body-sm font-body-sm text-on-surface-variant">{t('footer.desc')}</p>
         </div>
         <div>
-          <h4 className="font-bold text-on-surface mb-4">서비스</h4>
+          <h4 className="font-bold text-on-surface mb-4">{t('footer.services')}</h4>
           <ul className="space-y-2">
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/detail">Homestays</Link></li>
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/dashboard">Guardianship</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/detail">{t('nav.homestays')}</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/dashboard">{t('nav.dashboard')}</Link></li>
             <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="/landing">Landing</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-on-surface mb-4">정보</h4>
+          <h4 className="font-bold text-on-surface mb-4">{t('footer.info')}</h4>
           <ul className="space-y-2">
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">Terms of Service</Link></li>
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">Privacy Policy</Link></li>
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">Support</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">{t('footer.terms')}</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">{t('footer.privacy')}</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">{t('footer.support')}</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-on-surface mb-4">커뮤니티</h4>
+          <h4 className="font-bold text-on-surface mb-4">{t('footer.community')}</h4>
           <ul className="space-y-2">
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">Host Application</Link></li>
-            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">Partnerships</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">{t('footer.host_app')}</Link></li>
+            <li><Link className="text-label-sm text-on-surface-variant hover:text-secondary transition-colors" to="#">{t('footer.partnerships')}</Link></li>
           </ul>
         </div>
       </div>

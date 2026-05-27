@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 
 // 임시 유저 타입 (추후 Firebase User로 대체)
 export interface User {
@@ -35,14 +35,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     } else {
-      const mockUser: User = { uid: 'mock-uid-123', email, role: 'partner', membershipTier: 'free' };
+      const mockUser: User = { uid: 'mock-uid-123', email, role: 'partner', membershipTier: 'premium' };
       setUser(mockUser);
       localStorage.setItem('mockUser', JSON.stringify(mockUser));
     }
   };
 
   const register = (email: string) => {
-    const mockUser: User = { uid: 'mock-uid-' + Date.now(), email, role: 'partner', membershipTier: 'free' };
+    const mockUser: User = { uid: 'mock-uid-' + Date.now(), email, role: 'partner', membershipTier: 'premium' };
     setUser(mockUser);
     localStorage.setItem('mockUser', JSON.stringify(mockUser));
   };

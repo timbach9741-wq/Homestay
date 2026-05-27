@@ -70,4 +70,4 @@ export default defineConfig([
     },
   },
 ])
-```
+안녕

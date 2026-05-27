@@ -1,4 +1,8 @@
+import { useLanguage } from '../context/LanguageContext';
+
 const Detail = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <main className="pt-20 pb-32">
@@ -20,7 +24,7 @@ const Detail = () => {
               <div className="absolute bottom-6 right-6">
                 <button className="bg-surface-container-lowest/90 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2 text-label-md font-label-md shadow-lg">
                   <span className="material-symbols-outlined">photo_library</span>
-                  사진 더보기 (12)
+                  {t('사진 더보기 (12)')}
                 </button>
               </div>
             </div>
@@ -34,14 +38,14 @@ const Detail = () => {
             {/* Title & Overview */}
             <section>
               <div className="flex items-center gap-2 mb-4">
-                <span className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">인기 숙소</span>
-                <span className="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">검증 완료</span>
+                <span className="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">{t('인기 숙소')}</span>
+                <span className="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">{t('검증 완료')}</span>
               </div>
-              <h1 className="text-headline-xl font-headline-xl mb-4">런던 부촌 윔블던의 화목한 가디언 가정</h1>
+              <h1 className="text-headline-xl font-headline-xl mb-4">{t('런던 부촌 윔블던의 화목한 가디언 가정')}</h1>
               <div className="flex items-center gap-6 text-on-surface-variant">
                 <div className="flex items-center gap-1">
                   <span className="material-symbols-outlined text-secondary-container">star</span>
-                  <span className="font-bold text-on-surface">4.9</span> (후기 24개)
+                  <span className="font-bold text-on-surface">4.9</span> ({t('후기 24개')})
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="material-symbols-outlined">location_on</span>
@@ -62,21 +66,21 @@ const Detail = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-headline-md font-headline-md mb-1">호스트 Sarah 님</h3>
-                    <p className="text-label-md font-label-md text-on-surface-variant">경력 12년 가디언 전문가</p>
+                    <h3 className="text-headline-md font-headline-md mb-1">{t('호스트 Sarah 님')}</h3>
+                    <p className="text-label-md font-label-md text-on-surface-variant">{t('경력 12년 가디언 전문가')}</p>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="bg-surface-container-high px-3 py-1 rounded-full text-label-sm font-label-sm">한국어 가능</span>
+                    <span className="bg-surface-container-high px-3 py-1 rounded-full text-label-sm font-label-sm">{t('한국어 가능')}</span>
                     <span className="bg-surface-container-high px-3 py-1 rounded-full text-label-sm font-label-sm">English</span>
                   </div>
                 </div>
                 <p className="text-body-md font-body-md text-on-surface mb-6">
-                  안녕하세요! 저희 가족은 10년 넘게 한국 유학생들과 함께 생활해왔습니다. 두 아이의 엄마이자 교육 컨설턴트로 활동하고 있어 학생들의 학업과 정서적 안정을 최우선으로 생각합니다. 매주 주말에는 근처 공원 산책과 한국식 집밥을 제공하며 따뜻한 가정 환경을 조성합니다.
+                  {t('안녕하세요! 저희 가족은 10년 넘게 한국 유학생들과 함께 생활해왔습니다. 두 아이의 엄마이자 교육 컨설턴트로 활동하고 있어 학생들의 학업과 정서적 안정을 최우선으로 생각합니다. 매주 주말에는 근처 공원 산책과 한국식 집밥을 제공하며 따뜻한 가정 환경을 조성합니다.')}
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-secondary-container" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
-                    <span className="text-label-md font-label-md">CRC/WWCC 검증</span>
+                    <span className="text-label-md font-label-md">CRC/WWCC {t('검증 완료')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-secondary-container" style={{ fontVariationSettings: "'FILL' 1" }}>medical_services</span>
@@ -93,15 +97,15 @@ const Detail = () => {
             {/* Key Features & Amenities */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
-                <h4 className="text-headline-md font-headline-md mb-6">식단 및 편의 시설</h4>
+                <h4 className="text-headline-md font-headline-md mb-6">{t('식단 및 편의 시설')}</h4>
                 <div className="space-y-6">
                   <div className="flex gap-4">
                     <div className="bg-surface-container p-2 rounded-lg h-fit">
                       <span className="material-symbols-outlined">restaurant</span>
                     </div>
                     <div>
-                      <p className="font-bold text-label-md">매일 제공되는 식단</p>
-                      <p className="text-body-sm text-on-surface-variant">조식(아메리칸), 석식(주 3회 한국식 식단 포함), 주말 전식 제공. 알러지 및 특수 식단 대응 가능.</p>
+                      <p className="font-bold text-label-md">{t('매일 제공되는 식단')}</p>
+                      <p className="text-body-sm text-on-surface-variant">{t('조식(아메리칸), 석식(주 3회 한국식 식단 포함), 주말 전식 제공. 알러지 및 특수 식단 대응 가능.')}</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -109,8 +113,8 @@ const Detail = () => {
                       <span className="material-symbols-outlined">wifi</span>
                     </div>
                     <div>
-                      <p className="font-bold text-label-md">고속 인터넷 & 스터디룸</p>
-                      <p className="text-body-sm text-on-surface-variant">5G 기가 와이파이, 각 방 개인용 책상, 모니터 스탠드 및 인체공학 의자 완비.</p>
+                      <p className="font-bold text-label-md">{t('고속 인터넷 & 스터디룸')}</p>
+                      <p className="text-body-sm text-on-surface-variant">{t('5G 기가 와이파이, 각 방 개인용 책상, 모니터 스탠드 및 인체공학 의자 완비.')}</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -118,28 +122,28 @@ const Detail = () => {
                       <span className="material-symbols-outlined">local_laundry_service</span>
                     </div>
                     <div>
-                      <p className="font-bold text-label-md">세탁 및 관리</p>
-                      <p className="text-body-sm text-on-surface-variant">주 2회 세탁 및 침구 교체. 매주 금요일 전문 청소 서비스 제공.</p>
+                      <p className="font-bold text-label-md">{t('세탁 및 관리')}</p>
+                      <p className="text-body-sm text-on-surface-variant">{t('주 2회 세탁 및 침구 교체. 매주 금요일 전문 청소 서비스 제공.')}</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div>
-                <h4 className="text-headline-md font-headline-md mb-6">주변 학교 거리</h4>
+                <h4 className="text-headline-md font-headline-md mb-6">{t('주변 학교 거리')}</h4>
                 <div className="space-y-4">
                   <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <span className="material-symbols-outlined text-on-primary-container">school</span>
                       <span className="font-medium">Wimbledon College</span>
                     </div>
-                    <span className="text-label-sm text-secondary-container font-bold">도보 10분</span>
+                    <span className="text-label-sm text-secondary-container font-bold">{t('도보 10분')}</span>
                   </div>
                   <div className="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <span className="material-symbols-outlined text-on-primary-container">school</span>
                       <span className="font-medium">King's College School</span>
                     </div>
-                    <span className="text-label-sm text-secondary-container font-bold">버스 15분</span>
+                    <span className="text-label-sm text-secondary-container font-bold">{t('버스 15분')}</span>
                   </div>
                   <div className="rounded-xl overflow-hidden h-32 mt-4 relative">
                     <div className="absolute inset-0 bg-surface-dim flex items-center justify-center">
@@ -155,23 +159,23 @@ const Detail = () => {
             <section className="bg-primary-container text-on-primary-fixed p-10 rounded-2xl">
               <div className="flex flex-col md:flex-row gap-12 items-center">
                 <div className="flex-1">
-                  <h4 className="text-headline-lg font-headline-lg text-white mb-4">EduGuard 신뢰 및 안전 정책</h4>
+                  <h4 className="text-headline-lg font-headline-lg text-white mb-4">{t('EduGuard 신뢰 및 안전 정책')}</h4>
                   <p className="text-body-md font-body-md text-on-primary-container mb-8">
-                    우리는 학생의 안전을 최우선으로 합니다. 모든 결제는 에스크로 서비스를 통해 보호되며, 서비스 완료 시 호스트에게 대금이 지급됩니다.
+                    {t('우리는 학생의 안전을 최우선으로 합니다. 모든 결제는 에스크로 서비스를 통해 보호되며, 서비스 완료 시 호스트에게 대금이 지급됩니다.')}
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <span className="material-symbols-outlined text-secondary-container mt-1">shield_with_heart</span>
                       <div>
-                        <p className="font-bold text-white">100% 에스크로 보호</p>
-                        <p className="text-body-sm text-on-primary-container">입주 확인 전까지 대금이 안전하게 보관됩니다.</p>
+                        <p className="font-bold text-white">{t('100% 에스크로 보호')}</p>
+                        <p className="text-body-sm text-on-primary-container">{t('입주 확인 전까지 대금이 안전하게 보관됩니다.')}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <span className="material-symbols-outlined text-secondary-container mt-1">verified_user</span>
                       <div>
-                        <p className="font-bold text-white">현지 가디언십 기관 인증</p>
-                        <p className="text-body-sm text-on-primary-container">정기적인 방문 실사를 통해 주거 환경을 검증합니다.</p>
+                        <p className="font-bold text-white">{t('현지 가디언십 기관 인증')}</p>
+                        <p className="text-body-sm text-on-primary-container">{t('정기적인 방문 실사를 통해 주거 환경을 검증합니다.')}</p>
                       </div>
                     </div>
                   </div>
@@ -179,19 +183,19 @@ const Detail = () => {
                 <div className="w-full md:w-64 grid grid-cols-2 gap-4">
                   <div className="bg-white/10 p-4 rounded-xl text-center backdrop-blur-md">
                     <span className="material-symbols-outlined text-secondary-container text-3xl mb-2">fingerprint</span>
-                    <p className="text-label-sm font-label-sm text-white">신원 확인</p>
+                    <p className="text-label-sm font-label-sm text-white">{t('신원 확인')}</p>
                   </div>
                   <div className="bg-white/10 p-4 rounded-xl text-center backdrop-blur-md">
                     <span className="material-symbols-outlined text-secondary-container text-3xl mb-2">policy</span>
-                    <p className="text-label-sm font-label-sm text-white">배경 조사</p>
+                    <p className="text-label-sm font-label-sm text-white">{t('배경 조사')}</p>
                   </div>
                   <div className="bg-white/10 p-4 rounded-xl text-center backdrop-blur-md">
                     <span className="material-symbols-outlined text-secondary-container text-3xl mb-2">payments</span>
-                    <p className="text-label-sm font-label-sm text-white">안전 결제</p>
+                    <p className="text-label-sm font-label-sm text-white">{t('안전 결제')}</p>
                   </div>
                   <div className="bg-white/10 p-4 rounded-xl text-center backdrop-blur-md">
                     <span className="material-symbols-outlined text-secondary-container text-3xl mb-2">support_agent</span>
-                    <p className="text-label-sm font-label-sm text-white">24/7 지원</p>
+                    <p className="text-label-sm font-label-sm text-white">{t('24/7 지원')}</p>
                   </div>
                 </div>
               </div>
@@ -200,8 +204,8 @@ const Detail = () => {
             {/* Reviews */}
             <section>
               <div className="flex items-center justify-between mb-8">
-                <h4 className="text-headline-md font-headline-md">학생 및 학부모 후기</h4>
-                <button className="text-secondary-container font-bold text-label-md">전체보기 (24)</button>
+                <h4 className="text-headline-md font-headline-md">{t('학생 및 학부모 후기')}</h4>
+                <button className="text-secondary-container font-bold text-label-md">{t('전체보기 (24)')}</button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant">
@@ -216,8 +220,8 @@ const Detail = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface">김*지</div>
                     <div>
-                      <p className="text-label-sm font-bold">김*지 학생</p>
-                      <p className="text-[10px] text-on-surface-variant">2023년 9월 - 2024년 6월 체류</p>
+                      <p className="text-label-sm font-bold">{t('김*지 학생')}</p>
+                      <p className="text-[10px] text-on-surface-variant">{t('2023년 9월 - 2024년 6월 체류')}</p>
                     </div>
                   </div>
                 </div>
@@ -233,8 +237,8 @@ const Detail = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface">박*현</div>
                     <div>
-                      <p className="text-label-sm font-bold">박*현 학부모</p>
-                      <p className="text-[10px] text-on-surface-variant">2022년 3월 - 현재 체류 중</p>
+                      <p className="text-label-sm font-bold">{t('박*현 학부모')}</p>
+                      <p className="text-[10px] text-on-surface-variant">{t('2022년 3월 - 현재 체류 중')}</p>
                     </div>
                   </div>
                 </div>
@@ -250,11 +254,11 @@ const Detail = () => {
                   <span className="text-headline-md font-headline-md">£1,850</span>
                   <span className="text-on-surface-variant">/ 월</span>
                 </div>
-                <div className="text-label-sm text-secondary-container font-bold">에스크로 보증</div>
+                <div className="text-label-sm text-secondary-container font-bold">{t('100% 에스크로 보호')}</div>
               </div>
               <div className="space-y-4 mb-8">
                 <div className="border border-outline p-3 rounded-lg">
-                  <label className="block text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">체크인 - 체크아웃</label>
+                  <label className="block text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">{t('체크인 - 체크아웃')}</label>
                   <div className="flex items-center justify-between">
                     <span className="text-body-sm">2024.09.01</span>
                     <span className="material-symbols-outlined text-on-surface-variant">calendar_today</span>
@@ -262,30 +266,30 @@ const Detail = () => {
                   </div>
                 </div>
                 <div className="border border-outline p-3 rounded-lg">
-                  <label className="block text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">학생 정보</label>
+                  <label className="block text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-1">{t('학생 정보')}</label>
                   <div className="flex items-center justify-between">
-                    <span className="text-body-sm">게스트 1명 (만 16세)</span>
+                    <span className="text-body-sm">{t('게스트 1명 (만 16세)')}</span>
                     <span className="material-symbols-outlined text-on-surface-variant">expand_more</span>
                   </div>
                 </div>
               </div>
               <button className="w-full bg-secondary-container text-white py-4 rounded-xl font-headline-md font-bold hover:opacity-90 transition-all shadow-md mb-4 flex items-center justify-center gap-2">
-                에스크로 결제로 예약하기
+                {t('에스크로 결제로 예약하기')}
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
               </button>
-              <p className="text-center text-label-sm text-on-surface-variant mb-6">아직 결제되지 않습니다.</p>
+              <p className="text-center text-label-sm text-on-surface-variant mb-6">{t('아직 결제되지 않습니다.')}</p>
               <div className="space-y-3">
                 <div className="flex justify-between text-body-sm">
                   <span>£1,850 x 10개월</span>
                   <span>£18,500</span>
                 </div>
                 <div className="flex justify-between text-body-sm">
-                  <span>가디언 서비스 수수료</span>
+                  <span>{t('가디언 서비스 수수료')}</span>
                   <span>£150</span>
                 </div>
                 <hr className="border-outline-variant" />
                 <div className="flex justify-between font-bold text-headline-md mt-4">
-                  <span>총 합계</span>
+                  <span>{t('총 합계')}</span>
                   <span>£18,650</span>
                 </div>
               </div>
@@ -294,19 +298,19 @@ const Detail = () => {
                   <div className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
                     <span className="material-symbols-outlined">chat</span>
                   </div>
-                  <span className="text-label-sm">호스트 문의</span>
+                  <span className="text-label-sm">{t('호스트 문의')}</span>
                 </button>
                 <button className="flex-1 flex flex-col items-center gap-1 group">
                   <div className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-surface-container transition-colors">
                     <span className="material-symbols-outlined">share</span>
                   </div>
-                  <span className="text-label-sm">공유하기</span>
+                  <span className="text-label-sm">{t('공유하기')}</span>
                 </button>
                 <button className="flex-1 flex flex-col items-center gap-1 group">
                   <div className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-surface-container transition-colors text-error">
                     <span className="material-symbols-outlined">favorite</span>
                   </div>
-                  <span className="text-label-sm">저장</span>
+                  <span className="text-label-sm">{t('저장')}</span>
                 </button>
               </div>
             </aside>
@@ -320,7 +324,7 @@ const Detail = () => {
           <span className="text-headline-md font-bold">£1,850</span>
           <span className="text-body-sm text-on-surface-variant">/ 월</span>
         </div>
-        <button className="bg-secondary-container text-white px-8 py-3 rounded-xl font-bold">예약하기</button>
+        <button className="bg-secondary-container text-white px-8 py-3 rounded-xl font-bold">{t('예약하기')}</button>
       </div>
     </>
   );
