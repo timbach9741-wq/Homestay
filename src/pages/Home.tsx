@@ -21,21 +21,21 @@ const COUNTRIES = [
 ];
 
 const GLOBE_PINS = [
-  { id: 'canada', name: '캐나다', code: 'ca', x: '16%', y: '22%' },
-  { id: 'us', name: '미국', code: 'us', x: '18%', y: '32%' },
-  { id: 'uk', name: '영국', code: 'gb', x: '36%', y: '25%' },
-  { id: 'france', name: '프랑스', code: 'fr', x: '38.5%', y: '28.5%' },
-  { id: 'germany', name: '독일', code: 'de', x: '40%', y: '26.5%' },
-  { id: 'japan', name: '일본', code: 'jp', x: '70%', y: '33%' },
-  { id: 'china', name: '중국', code: 'cn', x: '61%', y: '35%' },
-  { id: 'singapore', name: '싱가포르', code: 'sg', x: '60%', y: '51%' },
-  { id: 'australia', name: '호주', code: 'au', x: '72%', y: '64%' },
-  { id: 'nz', name: '뉴질랜드', code: 'nz', x: '79%', y: '71.5%' },
-  { id: 'philippines', name: '필리핀', code: 'ph', x: '65.5%', y: '49.5%' },
-  { id: 'malaysia', name: '말레이시아', code: 'my', x: '59%', y: '49%' },
-  { id: 'taiwan', name: '대만', code: 'tw', x: '65%', y: '39%' },
-  { id: 'hk', name: '홍콩', code: 'hk', x: '63.5%', y: '40.5%' },
-  { id: 'korea', name: '대한민국', code: 'kr', x: '67%', y: '33%', isHost: true }
+  { id: 'canada', name: '캐나다', code: 'ca', x: '22%', y: '26%' },
+  { id: 'us', name: '미국', code: 'us', x: '24%', y: '38%' },
+  { id: 'uk', name: '영국', code: 'gb', x: '48%', y: '32%' },
+  { id: 'france', name: '프랑스', code: 'fr', x: '49%', y: '36%' },
+  { id: 'germany', name: '독일', code: 'de', x: '51%', y: '34%' },
+  { id: 'japan', name: '일본', code: 'jp', x: '85.8%', y: '40.2%' },
+  { id: 'china', name: '중국', code: 'cn', x: '78%', y: '42%' },
+  { id: 'singapore', name: '싱가포르', code: 'sg', x: '77%', y: '58%' },
+  { id: 'australia', name: '호주', code: 'au', x: '86%', y: '72%' },
+  { id: 'nz', name: '뉴질랜드', code: 'nz', x: '94%', y: '78%' },
+  { id: 'philippines', name: '필리핀', code: 'ph', x: '81%', y: '49.5%' },
+  { id: 'malaysia', name: '말레이시아', code: 'my', x: '77.5%', y: '53%' },
+  { id: 'taiwan', name: '대만', code: 'tw', x: '81.4%', y: '42%' },
+  { id: 'hk', name: '홍콩', code: 'hk', x: '79.5%', y: '43.5%' },
+  { id: 'korea', name: '대한민국', code: 'kr', x: '84%', y: '40%', isHost: true }
 ];
 
 const Home = () => {
