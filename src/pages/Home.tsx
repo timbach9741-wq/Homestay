@@ -115,7 +115,7 @@ const Home = () => {
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex w-[200%] h-full shrink-0 animate-spin-globe">
                     {/* Copy 1 */}
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat relative">
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=3')] bg-[length:100%_100%] bg-no-repeat relative">
                       {GLOBE_PINS.map((pin) => (
                         <button
                           key={pin.id}
@@ -138,7 +138,7 @@ const Home = () => {
                       ))}
                     </div>
                     {/* Copy 2 */}
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat relative">
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=3')] bg-[length:100%_100%] bg-no-repeat relative">
                       {GLOBE_PINS.map((pin) => (
                         <button
                           key={`${pin.id}-copy`}
