@@ -1,6 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import ScrollToTop from './components/common/ScrollToTop';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import Detail from './pages/Detail';
@@ -11,9 +13,21 @@ import Pricing from './pages/Pricing';
 import CountryList from './pages/CountryList';
 import { LanguageProvider } from './context/LanguageContext';
 
+// Scroll to top on every page navigation (route changes)
+function ScrollToTopOnNavigate() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTopOnNavigate />
       <LanguageProvider>
         <div className="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden flex flex-col">
           <Navbar />
@@ -30,6 +44,7 @@ function App() {
             </Routes>
           </div>
           <Footer />
+          <ScrollToTop />
         </div>
       </LanguageProvider>
     </Router>

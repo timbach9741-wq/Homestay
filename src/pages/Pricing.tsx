@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
-import { CheckCircle2, Star, Gift, UserPlus } from 'lucide-react';
+import { CheckCircle2, Star, Gift } from 'lucide-react';
 
 const Pricing = () => {
   const { user } = useAuth();
@@ -9,101 +9,173 @@ const Pricing = () => {
   const { t } = useLanguage();
 
   return (
-    <main className="min-h-screen bg-surface-container-lowest pt-24 pb-12 px-4">
-      <div className="max-w-4xl mx-auto text-center mb-12">
-        <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-6 shadow-sm">
+    <main className="min-h-screen bg-[#f8fafc] pt-24 pb-20 px-4">
+      <div className="max-w-5xl mx-auto text-center mb-16">
+        <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#4f46e5]/10 text-[#4f46e5] font-label-md text-label-md mb-6 shadow-sm">
           <Gift size={16} /> {t('특별 파트너 모집 프로모션')}
         </span>
-        <h1 className="text-display-sm font-display-sm font-bold text-on-surface mb-4">
-          {t('에듀가드 파트너 전면 무료화 안내')}
+        <h1 className="text-[36px] md:text-[44px] font-sans font-bold text-slate-900 mb-4 break-keep tracking-tight">
+          {t('에듀가드 파트너 요금제')}
         </h1>
-        <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto break-keep">
-          {t('더 많은 글로벌 유학생들과 우수한 현지 홈스테이의 연결을 위해, **파트너 등록 및 홍보 서비스를 수수료/이용료 없이 전면 무료**로 제공합니다.')}
+        <p className="text-body-lg text-slate-600 max-w-2xl mx-auto break-keep leading-relaxed font-sans font-medium">
+          {t('더 많은 글로벌 유학생들과 우수한 현지 홈스테이의 연결을 위해 초기 파트너 입점 프로모션을 진행합니다. 부담 없이 시작하고 우수한 유학생들을 만나보세요.')}
         </p>
       </div>
 
-      <div className="max-w-3xl mx-auto">
-        {/* Main Free Plan Card */}
-        <div className="bg-primary text-on-primary rounded-3xl p-8 md:p-12 shadow-xl relative flex flex-col border-4 border-secondary-container overflow-hidden">
-          {/* Decorative Background Glow */}
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-secondary rounded-full opacity-20 blur-3xl pointer-events-none"></div>
-          
-          <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-secondary text-on-secondary px-5 py-1.5 rounded-full text-label-sm font-bold flex items-center gap-1 shadow-md">
-            <Star size={14} /> {t('추천 호스트')}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+        {/* Tier 1: General (Free for 3 Months) */}
+        <div className="bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)] border border-slate-200/60 flex flex-col relative transition-all hover:shadow-lg">
+          <div className="mb-6">
+            <span className="text-xs bg-slate-100 text-slate-600 px-3.5 py-1 rounded-full font-bold uppercase tracking-wider">{t('일반 파트너')}</span>
+            <h3 className="text-2xl font-bold text-slate-900 mt-4 mb-2 font-sans">{t('일반 가입')}</h3>
+            <p className="text-sm text-slate-500 font-sans leading-relaxed">{t('기본적인 홈스테이 리스팅 및 유학생 매칭 서비스를 지원합니다.')}</p>
           </div>
           
-          <div className="mb-8 border-b border-white/20 pb-6">
-            <h2 className="text-headline-md font-bold mb-2">{t('에듀가드 안심 파트너 요금')}</h2>
-            <p className="opacity-90 mb-4">{t('입점 기간 한정, 월 49,000원 상당의 모든 프리미엄 기능을 제공합니다.')}</p>
+          <div className="mb-6 border-t border-slate-100 pt-6">
             <div className="flex items-baseline gap-2">
-              <span className="text-display-md font-extrabold">₩0</span>
-              <span className="text-body-lg opacity-80 line-through">{t('/ 월 49,000원')}</span>
-              <span className="text-body-md bg-white/20 px-3 py-1 rounded-full font-bold ml-2">{t('평생 무료 지원')}</span>
+              <span className="text-4xl font-extrabold text-slate-900">$30</span>
+              <span className="text-slate-500 text-sm">{t('/ 월')}</span>
+              <span className="text-xs bg-indigo-500 text-white px-2 py-0.5 rounded-full font-bold ml-2">{t('3개월 무료')}</span>
             </div>
           </div>
-          
-          <h3 className="text-title-lg font-bold mb-6">{t('무상 제공되는 프리미엄 기능:')}</h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-secondary shrink-0 mt-0.5" />
-              <span className="text-body-md font-medium">{t('지역별 검색 결과 최상단 노출 권한')}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-secondary shrink-0 mt-0.5" />
-              <span className="text-body-md font-medium">{t('\'글로벌 안심 홈스테이\' 인증 마크 부여')}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-secondary shrink-0 mt-0.5" />
-              <span className="text-body-md font-medium">{t('숙소 실사진 및 동영상 무제한 등록')}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-secondary shrink-0 mt-0.5" />
-              <span className="text-body-md font-medium">{t('카카오톡 / WhatsApp 다이렉트 연락처 노출')}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-secondary shrink-0 mt-0.5" />
-              <span className="text-body-md font-medium">{t('학부모용 한국어 자동 번역 번들 적용')}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-secondary shrink-0 mt-0.5" />
-              <span className="text-body-md font-medium">{t('공항 픽업 및 랜딩 부가 서비스 판매 지원')}</span>
-            </li>
-          </ul>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-            {user ? (
-              <button 
-                onClick={() => navigate('/dashboard')}
-                className="flex-1 py-4 rounded-full bg-secondary text-on-secondary font-bold text-label-lg hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2"
-              >
-                <CheckCircle2 size={18} /> {t('대시보드에서 가입 신청서 작성하기')}
-              </button>
-            ) : (
-              <>
-                <button 
-                  onClick={() => navigate('/register')}
-                  className="flex-1 py-4 rounded-full bg-secondary text-on-secondary font-bold text-label-lg hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2"
-                >
-                  <UserPlus size={18} /> {t('지금 파트너로 시작하기')}
-                </button>
-                <button 
-                  onClick={() => navigate('/login')}
-                  className="py-4 px-8 rounded-full border-2 border-white/30 text-white font-bold text-label-lg hover:bg-white/10 transition-colors"
-                >
-                  {t('로그인')}
-                </button>
-              </>
-            )}
+          <div className="space-y-4 mb-8">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-600 text-sm font-medium">{t('기본 홈스테이 정보 등록')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-600 text-sm font-medium">{t('일반 검색 결과 영역 노출')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-600 text-sm font-medium">{t('다수 업체 순환 노출')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-600 text-sm font-medium">{t('에스크로 안전 계약 보호')}</span>
+            </div>
+          </div>
+
+          <div className="mt-auto">
+            <button 
+              onClick={() => navigate(user ? '/dashboard' : '/register')}
+              className="w-full py-3.5 rounded-2xl border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 active:scale-95 transition-all text-sm font-sans"
+            >
+              {user ? t('대시보드로 가기') : t('3개월 무료 시작하기')}
+            </button>
           </div>
         </div>
 
-        {/* Informational Section */}
-        <div className="mt-12 bg-surface-container rounded-3xl p-8 border border-outline-variant text-center">
-          <h3 className="font-headline-sm font-bold mb-3">{t('왜 에듀가드는 무료로 제공되나요?')}</h3>
-          <p className="text-body-md text-on-surface-variant max-w-2xl mx-auto break-keep">
-            {t('에듀가드는 해외에 자녀를 보내는 한국인 학부모들의 불안감을 해소하기 위해 설립되었습니다. 진입 장벽을 낮춰 더 많은 훌륭한 현지 호스트들의 신원과 안전 규정을 검증하는 것이 가장 큰 목표이므로, 모든 입점 비용은 전면 무료로 제공됩니다.')}
-          </p>
+        {/* Tier 2: Premium (Free for 3 Months) */}
+        <div className="bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(79,70,229,0.08)] border-2 border-[#4f46e5] flex flex-col relative transition-all hover:shadow-xl">
+          <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-[#4f46e5] text-white px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+            <Star size={12} fill="currentColor" /> {t('인기 호스트 추천')}
+          </div>
+
+          <div className="mb-6">
+            <span className="text-xs bg-[#4f46e5]/10 text-[#4f46e5] px-3.5 py-1 rounded-full font-bold uppercase tracking-wider">{t('프리미엄 파트너')}</span>
+            <h3 className="text-2xl font-bold text-slate-900 mt-4 mb-2 font-sans">{t('프리미엄 가입')}</h3>
+            <p className="text-sm text-slate-500 font-sans leading-relaxed">{t('최상단 노출 및 특별 하이라이트 디자인으로 마케팅 효과를 극대화합니다.')}</p>
+          </div>
+          
+          <div className="mb-6 border-t border-slate-100 pt-6">
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl font-extrabold text-[#4f46e5]">$200</span>
+              <span className="text-slate-500 text-sm">{t('/ 월')}</span>
+              <span className="text-xs bg-amber-500 text-white px-2 py-0.5 rounded-full font-bold ml-2">{t('3개월 무료')}</span>
+            </div>
+          </div>
+
+          <div className="space-y-4 mb-8">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-700 text-sm font-semibold">{t('카테고리 최상단 배너')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-700 text-sm font-semibold">{t('별도 하이라이트 디자인')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-700 text-sm font-semibold">{t('홈페이지 메인 페이지 추천')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-700 text-sm font-semibold">{t('숙소 실사진 및 영상 무제한 등록')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-[#4f46e5] shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-700 text-sm font-semibold">{t('한국인 학부모용 자동 한글 번역')}</span>
+            </div>
+          </div>
+
+          <div className="mt-auto">
+            <button 
+              onClick={() => navigate(user ? '/dashboard' : '/register')}
+              className="w-full py-3.5 rounded-2xl bg-[#4f46e5] text-white font-bold hover:bg-[#4338ca] active:scale-95 transition-all text-sm font-sans shadow-md"
+            >
+              {user ? t('대시보드로 가기') : t('프리미엄 3개월 무료 시작')}
+            </button>
+          </div>
         </div>
+
+        {/* Tier 3: Regional Exclusive (Consultation) */}
+        <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(15,23,42,0.06)] border border-slate-800 flex flex-col relative transition-all hover:shadow-lg">
+          <div className="mb-6">
+            <span className="text-xs bg-amber-500/20 text-amber-400 px-3.5 py-1 rounded-full font-bold uppercase tracking-wider">{t('지역 선점제')}</span>
+            <h3 className="text-2xl font-bold text-white mt-4 mb-2 font-sans">{t('지역 독점 파트너')}</h3>
+            <p className="text-sm text-slate-400 font-sans leading-relaxed">{t('지정한 구역 및 학군에서 압도적인 1순위 노출을 확보하여 독점적으로 유학생 예약을 선점합니다.')}</p>
+          </div>
+          
+          <div className="mb-6 border-t border-slate-800 pt-6">
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl font-extrabold text-amber-400">$800</span>
+              <span className="text-slate-400 text-sm">{t('/ 월')}</span>
+              <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-bold ml-2">{t('별도 문의 및 상담')}</span>
+            </div>
+          </div>
+
+          <div className="space-y-4 mb-8">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-amber-400 shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-300 text-sm font-medium">{t('세부 구역/학군 단위별 오직 1개 호스트 독점 보장')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-amber-400 shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-300 text-sm font-medium">{t('해당 지역 트래픽 100% 흡수')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-amber-400 shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-300 text-sm font-medium">{t('경쟁사 노출 전면 차단')}</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="text-amber-400 shrink-0 mt-0.5" size={18} />
+              <span className="text-slate-300 text-sm font-medium">{t('공식 인증 가디언 VVIP 골드 배지')}</span>
+            </div>
+          </div>
+
+          <div className="mt-auto">
+            <p className="text-[11px] text-slate-400 mb-3 text-center leading-normal break-keep">
+              {t('* 이미 독점된 지역의 경우 가입이 제한되며, 프리미엄 파트너 요금제로 대체 가입을 안내해 드립니다.')}
+            </p>
+            <button 
+              onClick={() => window.open('mailto:support@eduguard.com?subject=Regional%20Exclusive%20Inquiry')}
+              className="w-full py-3.5 rounded-2xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 active:scale-95 transition-all text-sm font-sans"
+            >
+              {t('지역 독점 문의 및 상담')}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Informational Section */}
+      <div className="max-w-3xl mx-auto mt-16 bg-white rounded-3xl p-8 border border-slate-200/60 text-center shadow-sm">
+        <h3 className="text-xl font-bold mb-3 text-slate-900 font-sans">{t('왜 에듀가드는 대부분 무료 프로모션을 진행하나요?')}</h3>
+        <p className="text-body-md text-slate-600 max-w-2xl mx-auto break-keep leading-relaxed font-sans font-medium">
+          {t('에듀가드는 해외에 자녀를 보내는 한국인 학부모들의 불안감을 해소하기 위해 설립되었습니다. 진입 장벽을 낮춰 더 많은 훌륭한 현지 호스트들의 신원과 안전 규정을 검증하는 것이 가장 큰 목표이므로, 일반 및 프리미엄 등록 비용은 3개월간 무료 프로모션으로 제공하며 추후 광고 수수료 및 부가 서비스 제휴를 통해 확장성 높은 비즈니스 구조를 구축합니다.')}
+        </p>
       </div>
     </main>
   );

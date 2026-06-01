@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import ThreeGlobe from '../components/ThreeGlobe';
+import InteractiveMap from '../components/InteractiveMap';
 
 const COUNTRIES = [
   { id: 'canada', code: 'ca', img: '/images/countries/canada.jpg' },
@@ -31,50 +31,50 @@ const Home = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[620px] lg:h-[680px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b1c30] via-[#081524] to-[#040810]">
+      <section className="relative min-h-[620px] lg:h-[680px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#ffffff] via-[#f8fafc] to-[#eff6ff]/40">
         {/* Abstract background grid or patterns for premium feel */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px] opacity-60"></div>
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary-fixed/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-[size:32px_32px] opacity-85"></div>
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#4f46e5]/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#3b82f6]/5 rounded-full blur-[100px] pointer-events-none"></div>
         
         <div className="relative z-10 w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Text Content */}
-          <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm md:text-base font-sans font-semibold text-secondary-container bg-secondary-container/15 border border-secondary-container/35 rounded-full drop-shadow-sm">
+          <div className="lg:col-span-5 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm md:text-base font-sans font-semibold text-[#4f46e5] bg-[#4f46e5]/10 border border-[#4f46e5]/20 rounded-full drop-shadow-sm">
               {t('hero.badge')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.25] font-sans font-bold text-white break-keep tracking-[-0.03em] mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.25] font-sans font-bold text-slate-900 break-keep tracking-[-0.03em] mb-8">
               {t('hero.title')}
             </h1>
             
             {/* Elegant Search/CTA Area */}
-            <div className="w-full max-w-lg bg-surface-container-lowest/10 backdrop-blur-md border border-white/10 p-2 rounded-2xl flex flex-col sm:flex-row gap-2 shadow-2xl">
+            <div className="w-full max-w-lg bg-white/95 backdrop-blur-md border border-slate-200/80 p-2 rounded-2xl flex flex-col sm:flex-row gap-2 shadow-[0_15px_40px_-10px_rgba(15,23,42,0.06)]">
               <input 
                 type="text" 
                 placeholder="어느 국가로 유학을 준비 중이신가요?" 
-                className="flex-1 bg-transparent px-4 py-3 text-white placeholder-white/50 outline-none text-base font-sans font-medium"
+                className="flex-1 bg-transparent px-4 py-3 text-slate-800 placeholder-slate-400/90 outline-none text-base font-sans font-medium"
               />
               <button 
                 onClick={() => {
                   const el = document.getElementById('country-section');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-secondary-container text-white px-7 py-3.5 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all font-sans whitespace-nowrap"
+                className="bg-[#4f46e5] hover:bg-[#4338ca] text-white px-7 py-3.5 rounded-xl font-bold active:scale-95 transition-all font-sans whitespace-nowrap"
               >
                 검색하기
               </button>
             </div>
           </div>
           
-          {/* Globe Container */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            {/* Spinning Globe Outer Wrapper with Atmosphere Glow */}
-            <div className="relative group/globe">
+          {/* Map Container */}
+          <div className="lg:col-span-7 w-full flex justify-center items-center">
+            {/* World Map Wrapper with Glow */}
+            <div className="relative w-full group/map">
               {/* Outer Atmosphere Glow */}
-              <div className="absolute -inset-4 rounded-full bg-sky-500/10 blur-[25px] opacity-75 group-hover/globe:opacity-100 transition-opacity duration-1000"></div>
+              <div className="absolute -inset-4 rounded-3xl bg-sky-500/10 blur-[30px] opacity-50 group-hover/map:opacity-70 transition-opacity duration-1000"></div>
               
               {/* Floating Tooltip HUD */}
-              <div className={`absolute top-[-65px] left-1/2 -translate-x-1/2 bg-surface-container-lowest/95 backdrop-blur-md border border-white/20 px-4 py-2 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex items-center gap-3 z-50 transition-all duration-300 pointer-events-none ${hoveredPin ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'}`}>
+              <div className={`absolute top-[-65px] left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md border border-slate-200/60 px-4 py-2 rounded-2xl shadow-[0_10px_30px_rgba(15,23,42,0.08)] flex items-center gap-3 z-50 transition-all duration-300 pointer-events-none ${hoveredPin ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'}`}>
                 {hoveredPin && (
                   <>
                     <img src={`https://flagcdn.com/${hoveredPin.code}.svg`} alt={`${hoveredPin.name} 국기`} className="w-6 h-auto rounded-[2px] shadow-sm" />
@@ -88,8 +88,8 @@ const Home = () => {
                 )}
               </div>
 
-              {/* ThreeGlobe Canvas Component */}
-              <ThreeGlobe 
+              {/* Interactive World Map Component */}
+              <InteractiveMap 
                 onPinClick={(id) => navigate(`/country/${id}`)} 
                 onPinHover={setHoveredPin} 
               />
