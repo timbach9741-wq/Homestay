@@ -638,38 +638,7 @@ const translations: Record<Language, Record<string, string>> = {
     // NZ (subagent variant)
     '뉴질랜드 교육부 규정에 맞춰, 유학생을 마당에 별도 건축된 임시 간이 컨테이너 주택(Sleep-outs)이나 카라반(Caravans)에 숙박시키지 않고, 오직 본 가옥 내부의 독립된 침실에만 배정할 것을 엄숙히 서약합니다.': 'I solemnly pledge not to house students in sleep-outs or caravans, only in independent bedrooms within the main house per NZ regulations.',
 
-    // Step 2 checkbox texts (subagent variants)
-    '제공할 유학생 객실 내에 외부로 통하는 규격 창문이 있고, 완전히 닫을 수 있는 독립된 정식 문이 있음을 증명합니다. (지하방이나 창문이 없는 방은 법적으로 등록이 불가합니다.)': 'The student room has a standard window to the outside and a fully closable independent door. (Basement or windowless rooms cannot be legally registered.)',
-    '제공할 유학생 객실 내에 외부로 통하는 규격 창문이 있고, 완전히 닫을 수 있는 독립된 정식 문이 있음을 증명합니다. (지하방이나 창문이 없는 방은 법적으로 등록이 불가능합니다.)': 'The student room has a standard window to the outside and a fully closable independent door. (Basement or windowless rooms cannot be legally registered.)',
-    '가옥 내에 정상 작동 가능한 연기 감지기(Smoke Detector) 및 초기 진화용 소화기가 규정된 장소에 비치되어 있습니다. (호주, 미국, 캐나다 등 현지 소방법 필수 기준 준수)': 'Working smoke detectors and fire extinguishers are installed at designated locations. (Compliant with local fire codes in Australia, US, Canada, etc.)',
 
-    // Navigation & Sidebar
-    '이전': 'Previous',
-    '다음': 'Next',
-    '신청서 최종 제출하기': 'Submit Final Application',
-    '홈스테이 실사진 관리': 'Homestay Photo Management',
-    '숙소 사진': 'Accommodation Photo',
-    'Premium 파트너 혜택 무상 적용': 'Free Premium Partner Benefits',
-    '유학생 및 학부모 매칭 확률 극대화를 위해 **사진 및 동영상을 무제한 업로드**하실 수 있습니다! (모두 무료)': 'Upload **unlimited photos and videos** to maximize matching with students and parents! (All free)',
-    '실무 안내 (안심 매칭 가이드)': 'Practical Guide (Safe Matching Guide)',
-    '다국어 자동 번역 모듈 탑재': 'Multi-language Auto Translation',
-    '입력하신 호스트 정보는 한국 유학생 학부모용 전용 대시보드에 **깔끔한 한글 번역본**으로 자동 제공되어 의사소통 분쟁을 원천 해결합니다.': 'Your host information is automatically translated and displayed on the Korean parent dashboard, eliminating communication issues.',
-    '학교 거리 자동 매핑': 'Automatic School Distance Mapping',
-    '기재하신 주소 정보를 바탕으로 현지 구글 맵 API와 연동되어 인근 중고등학교/대학교까지의 버스/도보 통학 시간이 학생 화면에 실시간으로 표시됩니다.': 'Based on your address, Google Maps API calculates commute times to nearby schools, displayed in real-time on the student screen.',
-    '실제 현장 안전 실사': 'On-Site Safety Inspection',
-    '서류 제출 완료 후, 현지 EduGuard 가디언 팀이 직접 가옥을 방문하여 소방 설비 및 쾌적도 상태를 2차로 확인하고 최종 안심 등급을 수여합니다.': 'After document submission, the local EduGuard guardian team visits to inspect fire safety and comfort, then assigns the final safety rating.',
-
-    // Dashboard Header & Step Tracker
-    '글로벌 안심 홈스테이 파트너 대시보드': 'Global Safe Homestay Partner Dashboard',
-    '환영합니다, ': 'Welcome, ',
-    '님! 입점 신청 정보 및 숙소를 관리하세요.': '! Manage your listing application and accommodation.',
-    '👑 Premium 무제한 케어 파트너 (전면 무료 제공)': '👑 Premium Unlimited Care Partner (Completely Free)',
-    '기본 정보': 'Profile',
-    '가옥 & 객실': 'Home & Room',
-    '식사 & 친화도': 'Meals & Match',
-    '지원 서비스': 'Services',
-    '국가별 서류': 'Legal Docs',
-    '최종 서약': 'Final Pledge'
   }
 };
 
