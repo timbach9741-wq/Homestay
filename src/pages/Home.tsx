@@ -21,21 +21,21 @@ const COUNTRIES = [
 ];
 
 const GLOBE_PINS = [
-  { id: 'canada', name: '캐나다', code: 'ca', x: '22%', y: '26%' },
-  { id: 'us', name: '미국', code: 'us', x: '24%', y: '38%' },
-  { id: 'uk', name: '영국', code: 'gb', x: '48%', y: '32%' },
-  { id: 'france', name: '프랑스', code: 'fr', x: '49%', y: '36%' },
-  { id: 'germany', name: '독일', code: 'de', x: '51%', y: '34%' },
-  { id: 'japan', name: '일본', code: 'jp', x: '85.8%', y: '40.2%' },
-  { id: 'china', name: '중국', code: 'cn', x: '78%', y: '42%' },
-  { id: 'singapore', name: '싱가포르', code: 'sg', x: '77%', y: '58%' },
-  { id: 'australia', name: '호주', code: 'au', x: '86%', y: '72%' },
-  { id: 'nz', name: '뉴질랜드', code: 'nz', x: '94%', y: '78%' },
-  { id: 'philippines', name: '필리핀', code: 'ph', x: '81%', y: '49.5%' },
-  { id: 'malaysia', name: '말레이시아', code: 'my', x: '77.5%', y: '53%' },
-  { id: 'taiwan', name: '대만', code: 'tw', x: '81.4%', y: '42%' },
-  { id: 'hk', name: '홍콩', code: 'hk', x: '79.5%', y: '43.5%' },
-  { id: 'korea', name: '대한민국', code: 'kr', x: '84%', y: '40%', isHost: true }
+  { id: 'canada', name: '캐나다', code: 'ca', x: '29%', y: '24.8%' },
+  { id: 'us', name: '미국', code: 'us', x: '28.4%', y: '28.4%' },
+  { id: 'uk', name: '영국', code: 'gb', x: '50%', y: '21.4%' },
+  { id: 'france', name: '프랑스', code: 'fr', x: '50.6%', y: '22.9%' },
+  { id: 'germany', name: '독일', code: 'de', x: '53.7%', y: '20.8%' },
+  { id: 'japan', name: '일본', code: 'jp', x: '88.8%', y: '30.2%' },
+  { id: 'china', name: '중국', code: 'cn', x: '82.3%', y: '27.8%' },
+  { id: 'singapore', name: '싱가포르', code: 'sg', x: '78.8%', y: '49.3%' },
+  { id: 'australia', name: '호주', code: 'au', x: '91.9%', y: '68.8%' },
+  { id: 'nz', name: '뉴질랜드', code: 'nz', x: '98.5%', y: '70.4%' },
+  { id: 'philippines', name: '필리핀', code: 'ph', x: '83.6%', y: '41.9%' },
+  { id: 'malaysia', name: '말레이시아', code: 'my', x: '78.3%', y: '48.3%' },
+  { id: 'taiwan', name: '대만', code: 'tw', x: '83.8%', y: '36.1%' },
+  { id: 'hk', name: '홍콩', code: 'hk', x: '81.7%', y: '37.6%' },
+  { id: 'korea', name: '대한민국', code: 'kr', x: '85.3%', y: '29.2%', isHost: true }
 ];
 
 const Home = () => {
@@ -118,7 +118,7 @@ const Home = () => {
                     style={{ animationPlayState: hoveredPin ? 'paused' : 'running' }}
                   >
                     {/* Copy 1 */}
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=3')] bg-[length:100%_100%] bg-no-repeat relative">
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=4')] bg-[length:100%_100%] bg-no-repeat relative">
                       {GLOBE_PINS.map((pin) => (
                         <button
                           key={pin.id}
@@ -141,7 +141,7 @@ const Home = () => {
                       ))}
                     </div>
                     {/* Copy 2 */}
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=3')] bg-[length:100%_100%] bg-no-repeat relative">
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=4')] bg-[length:100%_100%] bg-no-repeat relative">
                       {GLOBE_PINS.map((pin) => (
                         <button
                           key={`${pin.id}-copy`}
