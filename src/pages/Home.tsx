@@ -23,19 +23,31 @@ const WorldMap = () => (
   <svg viewBox="0 0 800 400" className="w-[800px] h-[400px] shrink-0" fill="url(#map-gradient)">
     <defs>
       <linearGradient id="map-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#ff9858" stopOpacity="0.85" />
-        <stop offset="100%" stopColor="#fd761a" stopOpacity="0.85" />
+        <stop offset="0%" stopColor="#ffb076" stopOpacity="0.9" />
+        <stop offset="50%" stopColor="#fd761a" stopOpacity="0.9" />
+        <stop offset="100%" stopColor="#d84f00" stopOpacity="0.9" />
       </linearGradient>
     </defs>
-    <path d="M 80,60 C 95,50 120,40 145,45 C 170,50 185,45 200,65 C 215,85 220,110 205,130 C 190,150 180,140 165,155 C 150,170 140,195 130,200 C 120,195 110,180 115,160 C 120,140 115,130 100,125 C 85,120 70,115 65,95 C 60,75 70,65 80,60 Z" />
-    <path d="M 230,30 C 245,20 265,25 260,40 C 255,55 235,50 230,30 Z" />
-    <path d="M 130,205 C 145,205 165,220 170,245 C 175,270 165,300 150,335 C 135,370 125,385 120,385 C 115,385 110,360 115,320 C 120,280 125,240 120,225 C 115,210 120,205 130,205 Z" />
-    <path d="M 330,175 C 360,150 405,150 425,175 C 445,200 455,230 435,265 C 415,300 395,320 380,320 C 365,320 360,300 355,275 C 350,250 330,240 325,220 C 320,200 315,190 330,175 Z" />
-    <path d="M 320,115 C 340,95 380,85 410,95 C 440,105 470,85 500,80 C 530,75 580,65 620,70 C 660,75 690,95 680,120 C 670,145 685,160 665,180 C 645,200 625,185 595,195 C 565,205 545,235 525,235 C 505,235 490,215 460,210 C 430,205 410,185 390,180 C 370,175 350,180 340,165 C 330,150 310,135 320,115 Z" />
-    <path d="M 320,75 C 325,70 330,75 328,80 C 325,85 318,80 320,75 Z" />
-    <path d="M 695,100 C 700,95 705,105 702,115 C 700,125 693,120 695,100 Z" />
-    <path d="M 480,195 C 490,195 495,205 490,215 C 485,225 475,205 480,195 Z" />
-    <path d="M 605,285 C 625,275 655,285 650,310 C 645,335 615,335 605,310 C 595,285 595,285 605,285 Z" />
+    <path d="M 60,60 L 75,50 L 90,55 L 110,40 L 130,45 L 150,30 L 175,35 L 205,50 L 210,75 L 195,95 L 200,120 L 185,140 L 170,135 L 165,150 L 150,165 L 140,190 L 130,195 L 120,185 L 115,160 L 120,140 L 115,130 L 100,125 L 85,120 L 70,115 L 60,95 L 60,75 Z" />
+    <path d="M 230,30 L 255,20 L 270,25 L 265,40 L 250,55 L 235,50 Z" />
+    <path d="M 130,205 L 145,205 L 160,215 L 168,235 L 172,255 L 175,275 L 168,295 L 160,315 L 150,335 L 140,355 L 130,370 L 125,385 L 120,385 L 115,380 L 115,360 L 112,340 L 115,320 L 120,290 L 125,270 L 125,250 L 120,230 L 120,215 Z" />
+    <path d="M 330,175 L 345,160 L 365,150 L 390,150 L 415,155 L 428,175 L 438,195 L 448,215 L 452,235 L 450,255 L 442,275 L 432,295 L 418,315 L 398,325 L 380,320 L 372,310 L 368,295 L 365,280 L 360,265 L 350,250 L 332,235 L 328,215 L 322,195 Z" />
+    <path d="M 315,120 L 330,105 L 350,95 L 375,90 L 400,95 L 425,100 L 450,90 L 475,80 L 500,75 L 525,75 L 550,70 L 580,65 L 610,65 L 640,70 L 670,80 L 685,95 L 680,115 L 670,130 L 675,145 L 685,155 L 675,170 L 660,180 L 640,195 L 620,185 L 600,190 L 585,195 L 570,205 L 550,225 L 530,235 L 515,235 L 505,225 L 495,215 L 480,210 L 465,205 L 450,200 L 435,195 L 410,185 L 395,180 L 375,175 L 355,170 L 340,165 L 330,150 L 315,135 Z" />
+    <path d="M 318,78 L 324,72 L 328,76 L 326,82 L 320,80 Z" />
+    <path d="M 698,98 L 704,95 L 708,105 L 704,118 L 698,110 Z" />
+    <path d="M 482,198 L 488,198 L 492,208 L 488,212 L 484,204 Z" />
+    <path d="M 528,198 L 534,202 L 532,212 L 526,208 Z" />
+    <path d="M 605,285 L 625,275 L 645,280 L 655,295 L 650,315 L 640,330 L 620,335 L 605,320 L 598,300 Z" />
+    <path d="M 670,335 L 675,345 L 670,355 L 665,345 Z" />
+    <path d="M 445,280 L 450,290 L 446,305 L 440,295 Z" />
+    
+    {/* Pulsing City Hubs */}
+    <circle cx="670" cy="115" r="3.5" fill="#ffffff" className="animate-pulse" />
+    <circle cx="326" cy="85" r="2.5" fill="#ffffff" className="animate-pulse" />
+    <circle cx="185" cy="85" r="2.5" fill="#ffffff" className="animate-pulse" />
+    <circle cx="95" cy="95" r="2.5" fill="#ffffff" className="animate-pulse" />
+    <circle cx="642" cy="315" r="2.5" fill="#ffffff" className="animate-pulse" />
+    <circle cx="105" cy="65" r="2.5" fill="#ffffff" className="animate-pulse" />
   </svg>
 );
 
@@ -83,19 +95,41 @@ const Home = () => {
           
           {/* Globe Container */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            {/* Spinning Globe Sphere */}
-            <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] rounded-full overflow-hidden shadow-[0_0_80px_0_rgba(253,118,26,0.25)] border border-white/10 bg-[#061221] aspect-square flex items-center justify-center">
-              {/* 3D Sphere Shading Overlay */}
-              <div className="absolute inset-0 rounded-full z-20 pointer-events-none shadow-[inset_-30px_-30px_70px_0_rgba(0,0,0,0.85),inset_15px_15px_30px_0_rgba(255,255,255,0.25),0_0_0_1px_rgba(255,255,255,0.05)]"></div>
+            {/* Spinning Globe Outer Wrapper with Atmosphere Glow */}
+            <div className="relative group/globe">
+              {/* Outer Atmosphere Glow */}
+              <div className="absolute -inset-1.5 rounded-full bg-secondary-container/15 blur-[15px] opacity-75 group-hover/globe:opacity-100 transition-opacity duration-1000"></div>
               
-              {/* Soft Inner Glow */}
-              <div className="absolute inset-0 rounded-full z-10 pointer-events-none bg-gradient-to-tr from-transparent via-secondary-container/5 to-secondary-container/20 mix-blend-screen opacity-80"></div>
-              
-              {/* Spinning Map Layer */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="flex w-[200%] h-[90%] items-center animate-spin-globe">
-                  <WorldMap />
-                  <WorldMap />
+              {/* Spinning Globe Sphere */}
+              <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] rounded-full overflow-hidden shadow-[0_0_80px_0_rgba(253,118,26,0.3)] border border-white/10 bg-[#040b15] aspect-square flex items-center justify-center">
+                {/* 3D Sphere Shading Overlay */}
+                <div className="absolute inset-0 rounded-full z-30 pointer-events-none shadow-[inset_-30px_-30px_70px_0_rgba(0,0,0,0.9),inset_15px_15px_30px_0_rgba(255,255,255,0.35),0_0_0_1px_rgba(255,255,255,0.08)]"></div>
+                
+                {/* Soft Inner Glow */}
+                <div className="absolute inset-0 rounded-full z-20 pointer-events-none bg-gradient-to-tr from-transparent via-secondary-container/5 to-secondary-container/30 mix-blend-screen opacity-90"></div>
+                
+                {/* STATIC 3D GRID OVERLAY */}
+                <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full z-25 pointer-events-none opacity-20 text-white">
+                  {/* Latitudes */}
+                  <line x1="0" y1="20" x2="100" y2="20" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  <line x1="0" y1="35" x2="100" y2="35" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.6" />
+                  <line x1="0" y1="65" x2="100" y2="65" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  <line x1="0" y1="80" x2="100" y2="80" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  
+                  {/* Longitudes */}
+                  <ellipse cx="50" cy="50" rx="42" ry="50" fill="none" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  <ellipse cx="50" cy="50" rx="28" ry="50" fill="none" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  <ellipse cx="50" cy="50" rx="14" ry="50" fill="none" stroke="currentColor" strokeWidth="0.4" strokeDasharray="1.5 1.5" />
+                  <line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" strokeWidth="0.6" />
+                </svg>
+                
+                {/* Spinning Map Layer */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="flex w-[200%] h-[80%] items-center animate-spin-globe">
+                    <WorldMap />
+                    <WorldMap />
+                  </div>
                 </div>
               </div>
             </div>
