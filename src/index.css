@@ -28,6 +28,13 @@
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
+  @keyframes spin-globe {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-spin-globe {
+    animation: spin-globe 22s linear infinite;
+  }
 }
 
 
