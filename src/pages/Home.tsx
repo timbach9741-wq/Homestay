@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -19,9 +20,24 @@ const COUNTRIES = [
   { id: 'other', code: 'un', img: '/images/countries/other.jpg' }
 ];
 
+const GLOBE_PINS = [
+  { id: 'canada', name: '캐나다', code: 'ca', x: '22%', y: '26%' },
+  { id: 'us', name: '미국', code: 'us', x: '24%', y: '38%' },
+  { id: 'uk', name: '영국', code: 'gb', x: '47%', y: '32%' },
+  { id: 'france', name: '프랑스', code: 'fr', x: '49%', y: '36%' },
+  { id: 'germany', name: '독일', code: 'de', x: '51%', y: '34%' },
+  { id: 'japan', name: '일본', code: 'jp', x: '86%', y: '40%' },
+  { id: 'china', name: '중국', code: 'cn', x: '78%', y: '42%' },
+  { id: 'singapore', name: '싱가포르', code: 'sg', x: '77%', y: '58%' },
+  { id: 'australia', name: '호주', code: 'au', x: '86%', y: '72%' },
+  { id: 'nz', name: '뉴질랜드', code: 'nz', x: '94%', y: '78%' },
+  { id: 'korea', name: '대한민국', code: 'kr', x: '84%', y: '40%', isHost: true }
+];
+
 const Home = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
+  const [hoveredPin, setHoveredPin] = useState<any>(null);
 
   return (
     <main className="pt-20">
@@ -68,10 +84,25 @@ const Home = () => {
               {/* Outer Atmosphere Glow */}
               <div className="absolute -inset-4 rounded-full bg-sky-500/10 blur-[25px] opacity-75 group-hover/globe:opacity-100 transition-opacity duration-1000"></div>
               
+              {/* Floating Tooltip HUD */}
+              <div className={`absolute top-[-65px] left-1/2 -translate-x-1/2 bg-surface-container-lowest/95 backdrop-blur-md border border-white/20 px-4 py-2 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex items-center gap-3 z-50 transition-all duration-300 pointer-events-none ${hoveredPin ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95'}`}>
+                {hoveredPin && (
+                  <>
+                    <img src={`https://flagcdn.com/${hoveredPin.code}.svg`} alt={`${hoveredPin.name} 국기`} className="w-6 h-auto rounded-[2px] shadow-sm" />
+                    <div className="flex flex-col text-left">
+                      <span className="text-sm font-sans font-bold text-on-surface leading-none mb-0.5">{hoveredPin.name}</span>
+                      <span className="text-[10px] font-sans text-secondary-container font-semibold tracking-tight">
+                        {hoveredPin.isHost ? '출발 국가 (Home)' : '클릭하여 유학 정보 보기 ➔'}
+                      </span>
+                    </div>
+                  </>
+                )}
+              </div>
+
               {/* Spinning Globe Sphere (Larger Size: 500px on desktop) */}
               <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] md:w-[460px] md:h-[460px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-[0_0_80px_0_rgba(0,0,0,0.5)] border border-white/10 bg-[#040b15] aspect-square flex items-center justify-center">
                 {/* 3D Sphere Shading Overlay */}
-                <div className="absolute inset-0 rounded-full z-30 pointer-events-none shadow-[inset_-40px_-40px_90px_0_rgba(0,0,0,0.95),inset_20px_20px_40px_0_rgba(255,255,255,0.4),0_0_0_1px_rgba(255,255,255,0.08)]"></div>
+                <div className="absolute inset-0 rounded-full z-35 pointer-events-none shadow-[inset_-40px_-40px_90px_0_rgba(0,0,0,0.95),inset_20px_20px_40px_0_rgba(255,255,255,0.4),0_0_0_1px_rgba(255,255,255,0.08)]"></div>
                 
                 {/* Soft Inner Glow (Atmosphere-like Depth) */}
                 <div className="absolute inset-0 rounded-full z-20 pointer-events-none bg-gradient-to-tr from-transparent via-sky-500/5 to-sky-400/25 mix-blend-screen opacity-90"></div>
@@ -79,8 +110,52 @@ const Home = () => {
                 {/* Spinning Map Layer */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex w-[200%] h-full shrink-0 animate-spin-globe">
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat"></div>
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat"></div>
+                    {/* Copy 1 */}
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat relative">
+                      {GLOBE_PINS.map((pin) => (
+                        <button
+                          key={pin.id}
+                          onClick={() => {
+                            if (!pin.isHost) {
+                              navigate(`/country/${pin.id}`);
+                            }
+                          }}
+                          onMouseEnter={() => setHoveredPin(pin)}
+                          onMouseLeave={() => setHoveredPin(null)}
+                          style={{ left: pin.x, top: pin.y }}
+                          className="absolute -translate-x-1/2 -translate-y-1/2 group/pin cursor-pointer focus:outline-none pointer-events-auto z-40"
+                        >
+                          {/* Pulsing glow ring */}
+                          <span className="absolute -inset-2.5 rounded-full bg-secondary-container/30 scale-0 group-hover/pin:scale-100 transition-transform duration-300 pointer-events-none"></span>
+                          <span className="absolute w-3.5 h-3.5 -left-0.5 -top-0.5 rounded-full bg-secondary-container opacity-75 animate-ping pointer-events-none"></span>
+                          {/* Solid dot */}
+                          <span className={`relative block w-2.5 h-2.5 rounded-full border border-white shadow-[0_0_8px_rgba(253,118,26,0.8)] group-hover/pin:scale-125 transition-all duration-300 ${pin.isHost ? 'bg-sky-400' : 'bg-secondary-container'}`}></span>
+                        </button>
+                      ))}
+                    </div>
+                    {/* Copy 2 */}
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat relative">
+                      {GLOBE_PINS.map((pin) => (
+                        <button
+                          key={`${pin.id}-copy`}
+                          onClick={() => {
+                            if (!pin.isHost) {
+                              navigate(`/country/${pin.id}`);
+                            }
+                          }}
+                          onMouseEnter={() => setHoveredPin(pin)}
+                          onMouseLeave={() => setHoveredPin(null)}
+                          style={{ left: pin.x, top: pin.y }}
+                          className="absolute -translate-x-1/2 -translate-y-1/2 group/pin cursor-pointer focus:outline-none pointer-events-auto z-40"
+                        >
+                          {/* Pulsing glow ring */}
+                          <span className="absolute -inset-2.5 rounded-full bg-secondary-container/30 scale-0 group-hover/pin:scale-100 transition-transform duration-300 pointer-events-none"></span>
+                          <span className="absolute w-3.5 h-3.5 -left-0.5 -top-0.5 rounded-full bg-secondary-container opacity-75 animate-ping pointer-events-none"></span>
+                          {/* Solid dot */}
+                          <span className={`relative block w-2.5 h-2.5 rounded-full border border-white shadow-[0_0_8px_rgba(253,118,26,0.8)] group-hover/pin:scale-125 transition-all duration-300 ${pin.isHost ? 'bg-sky-400' : 'bg-secondary-container'}`}></span>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
