@@ -79,8 +79,8 @@ const Home = () => {
                 {/* Spinning Map Layer */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="flex w-[200%] h-full shrink-0 animate-spin-globe">
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-cover bg-no-repeat"></div>
-                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-cover bg-no-repeat"></div>
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat"></div>
+                    <div className="w-1/2 h-full bg-[url('/images/earth-texture.png')] bg-[length:100%_100%] bg-no-repeat"></div>
                   </div>
                 </div>
               </div>
