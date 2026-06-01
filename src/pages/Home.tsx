@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[620px] lg:h-[650px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b1c30] via-[#081524] to-[#040810]">
+      <section className="relative min-h-[620px] lg:h-[680px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0b1c30] via-[#081524] to-[#040810]">
         {/* Abstract background grid or patterns for premium feel */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px] opacity-60"></div>
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -38,7 +38,7 @@ const Home = () => {
             <span className="inline-block px-4 py-1.5 mb-6 text-sm md:text-base font-sans font-semibold text-secondary-container bg-secondary-container/15 border border-secondary-container/35 rounded-full drop-shadow-sm">
               {t('hero.badge')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-[52px] lg:leading-[1.25] font-sans font-bold text-white break-keep tracking-[-0.03em] mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.25] font-sans font-bold text-white break-keep tracking-[-0.03em] mb-8">
               {t('hero.title')}
             </h1>
             
@@ -66,12 +66,12 @@ const Home = () => {
             {/* Spinning Globe Outer Wrapper with Atmosphere Glow */}
             <div className="relative group/globe">
               {/* Outer Atmosphere Glow */}
-              <div className="absolute -inset-1.5 rounded-full bg-sky-500/10 blur-[15px] opacity-75 group-hover/globe:opacity-100 transition-opacity duration-1000"></div>
+              <div className="absolute -inset-4 rounded-full bg-sky-500/10 blur-[25px] opacity-75 group-hover/globe:opacity-100 transition-opacity duration-1000"></div>
               
-              {/* Spinning Globe Sphere */}
-              <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] rounded-full overflow-hidden shadow-[0_0_80px_0_rgba(0,0,0,0.5)] border border-white/10 bg-[#040b15] aspect-square flex items-center justify-center">
+              {/* Spinning Globe Sphere (Larger Size: 500px on desktop) */}
+              <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] md:w-[460px] md:h-[460px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-[0_0_80px_0_rgba(0,0,0,0.5)] border border-white/10 bg-[#040b15] aspect-square flex items-center justify-center">
                 {/* 3D Sphere Shading Overlay */}
-                <div className="absolute inset-0 rounded-full z-30 pointer-events-none shadow-[inset_-30px_-30px_70px_0_rgba(0,0,0,0.95),inset_15px_15px_30px_0_rgba(255,255,255,0.45),0_0_0_1px_rgba(255,255,255,0.08)]"></div>
+                <div className="absolute inset-0 rounded-full z-30 pointer-events-none shadow-[inset_-40px_-40px_90px_0_rgba(0,0,0,0.95),inset_20px_20px_40px_0_rgba(255,255,255,0.4),0_0_0_1px_rgba(255,255,255,0.08)]"></div>
                 
                 {/* Soft Inner Glow (Atmosphere-like Depth) */}
                 <div className="absolute inset-0 rounded-full z-20 pointer-events-none bg-gradient-to-tr from-transparent via-sky-500/5 to-sky-400/25 mix-blend-screen opacity-90"></div>
