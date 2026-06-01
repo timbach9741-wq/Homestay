@@ -113,7 +113,10 @@ const Home = () => {
                 
                 {/* Spinning Map Layer */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute left-0 top-0 flex w-[200%] h-full shrink-0 animate-spin-globe">
+                  <div 
+                    className="absolute left-0 top-0 flex w-[200%] h-full shrink-0 animate-spin-globe"
+                    style={{ animationPlayState: hoveredPin ? 'paused' : 'running' }}
+                  >
                     {/* Copy 1 */}
                     <div className="w-1/2 h-full bg-[url('/images/earth-texture.jpg?v=3')] bg-[length:100%_100%] bg-no-repeat relative">
                       {GLOBE_PINS.map((pin) => (
