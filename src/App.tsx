@@ -26,7 +26,7 @@ function ScrollToTopOnNavigate() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Homestay">
       <ScrollToTopOnNavigate />
       <LanguageProvider>
         <div className="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden flex flex-col">
